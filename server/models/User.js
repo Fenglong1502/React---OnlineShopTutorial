@@ -26,6 +26,14 @@ const userSchema = mongoose.Schema({
         type:Number,
         default: 0 
     },
+    cart:{
+        type:Array,
+        default: []
+    },
+    history: {
+        type: Array,
+        default: []
+    },
     image: String,
     token : {
         type: String,
@@ -40,7 +48,6 @@ userSchema.pre('save', function( next ) {
     var user = this;
     
     if(user.isModified('password')){    
-        // console.log('password changed')
         bcrypt.genSalt(saltRounds, function(err, salt){
             if(err) return next(err);
     

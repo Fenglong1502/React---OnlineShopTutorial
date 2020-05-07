@@ -48,8 +48,6 @@ function UploadProductPage(props) {
     const onSubmit = (event) => {
         event.preventDefault();
 
-        console.log("testing")
-
         if (!TitleValue || !DescriptionValue || !PriceValue ||
             !ContinentValue || !Images) {
             return alert('fill all the fields first!')
